@@ -1,0 +1,375 @@
+/* --- Var setup open -------- */
+
+:root{
+
+  --fs-0: .1rem;
+  --fs-1: .75rem;
+  --fs-2: 1rem;
+  --fs-3: 1.35rem;
+  --fs-4: 1.5rem;
+  --fs-5: 1.75rem;
+  --fs-6: 2rem;
+
+/* ---- Variables for @media requests for vertically spacing major page elements. 
+--mw-1 and --mh-1 are for widescreen displays such as HD monitors.
+--mw-2 and --mh-2 are for >600px W displays like smartphones. 
+
+/* ---- These variables change the margin proportions. --- */  
+
+  --mg-pg: 5vmax 2vmax;
+  --mg-2: 10vmin 0;
+
+/* ---- Variables for gaps/padding between boxes --------- */  
+  --gap-sm: 2vmin;
+  --gap-md: 4vmin;
+
+/* ---- Variables for background colors ------------------ */  
+
+  --bg-black: hsl(0, 0%, 0%);
+  --bg-darkest: hsl(0, 0%, 6%);
+  --bg-darker: hsl(0, 0%, 8%);
+  --bg-dark: hsl(0, 0%, 12%);
+  --bg-medium: hsl(0, 0%, 16%);
+  --bg-light: hsl(0, 0%, 22%);
+
+/* ---- Variables for hover colors ----------------------- */  
+
+  --hc-1: hsl(140, 60%, 53%);
+
+/* ---- Variables for hyperlink properties --------------- */ 
+
+  --link-color: hsl(140, 60%, 50%);
+  --link-visited: hsl(0, 60%, 50%);
+  --link-hover:;
+  --link-active: hsl(000);
+
+}
+
+
+/* --- Var setup close -------- */
+/* ---------------------------- */
+/* --- Font setup open -------- */
+
+@font-face {
+	font-family: 'Kanit';
+	src: local('Kanit-LightItalic'), 
+      url('/assets/fonts/Kanit/Kanit-LightItalic.woff2') format('woff2');
+      font-weight: 300;
+      font-style: italic;
+  }
+
+@font-face {
+	font-family: 'Kanit';
+	src: local('Kanit-Light'),
+	url('/assets/fonts/Kanit/Kanit-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }  
+
+  @font-face {
+	font-family: 'Kanit';
+	src: local('Kanit-Italic'), 
+      url('/assets/fonts/Kanit/Kanit-Italic.woff2') format('woff2');
+      font-weight: 400;
+      font-style: italic;
+  }
+
+  @font-face {
+	font-family: 'Kanit';
+	src: local('Kanit-Regular'),
+	url('/assets/fonts/Kanit/Kanit-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }  
+
+  @font-face {
+	font-family: 'Kanit';
+	src: local('Kanit-SemiBoldItalic'),
+	url('/assets/fonts/Kanit/Kanit-SemiBoldItalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+  }  
+
+  @font-face {
+	font-family: 'Kanit';
+	src: local('Kanit-SemiBold'),
+	url('/assets/fonts/Kanit/Kanit-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+  }  
+
+  @font-face {
+    font-family: 'RedditMono';
+    src: local('RedditMono-Regular'),
+    url('/assets/fonts/RedditMono/RedditMono-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }  
+
+/* --- Font setup close ------- */
+/* ---------------------------- */
+/* --- Global setup open ------ */
+
+html {
+  color-scheme: dark;
+  font-size: clamp(var(--fs-0), var(--fs-2), var(--fs-6));
+}
+
+body {
+  color: white;
+  font-family: 'Kanit', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-black);
+  background: linear-gradient(45deg, var(--bg-darkest), var(--bg-medium));
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.wrapper { 
+  margin: var(--mg-pg);
+}
+
+a:link {
+  color: var(--link-color);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+a:active {
+  color: var(--link-active);
+}
+
+/* Global text indentation */
+.p-indented { 
+  text-indent: 1rem;
+}
+
+/* --- Global setup close ----- */
+/* ---------------------------- */
+/* --- Title bar open --------- */
+
+.titlebar-wrapper { 
+  background: linear-gradient(45deg, black 30%, gray 200%);
+  max-width: 100%;
+}
+
+.titlebar-box { 
+  display: flex;
+  min-width: 80vw;
+  margin: 0 2vmin;
+  justify-content: space-between; 
+}
+
+.titlebar-content {
+  font-family: 'RedditMono', sans-serif;
+  font-size: clamp(0.5rem, 1rem, 1.35rem);
+  padding: 10px;
+  text-wrap: nowrap;
+}
+
+#title-mail { 
+  text-align: left;
+}
+#title-tel { 
+  text-align: right;
+}
+
+/* Changes padding for mobile devices */
+@media only screen and (max-width: 600px) {
+  .titlebar-content {
+    font-size: clamp(0.5rem, 0.75rem, 1rem);
+  }
+}
+
+/* --- Title bar close ----- */
+/* ------------------------- */
+/* --- Logo open ----------- */
+
+.header-flexbox {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-darker);
+  height: 100%;
+}
+
+.logo-container {
+  justify-content: center; /* Center align the logo */
+  margin: 35px 30% 35px 30%;
+}
+    
+.logo-container img {
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 auto; /* Center align the image inside its container */
+}
+
+/* --- Logo close --- */
+/* ------------------ */
+/* --- H1 ----------- */
+
+.h1-container {
+  width: 100%;
+  text-align: center;
+}
+
+.h1-content {
+  font-size: clamp(0.5rem, 1.5rem, 3rem);
+  font-weight: 300;
+}
+
+/* Changes padding for mobile devices */
+@media only screen and (max-width: 600px) {
+  .logo-container {
+    margin: 5vh 10vw 5vh 10vw;
+  }
+
+}
+
+/* --- Contact box close --- */
+/* ------------------------- */
+/* --- Contact box open ---- */
+
+/* HTML wrapper */
+.contact-wrapper { 
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  padding: 1vmin;
+  margin: var(--mg-pg);
+}
+
+/* Changes margin for mobile devices */
+@media only screen and (max-width: 800px) {
+  .contact-wrapper {
+    margin: var(--mg-pg-)
+  }
+}
+
+/* Banner and background */
+.contact-banner { 
+  max-width: 90vw;
+  margin: 5vmin;
+  background: linear-gradient(0deg, var(--bg-darker) 40%, transparent 100%);
+  background-blend-mode: multiply;
+  border-radius: 20px;
+  padding: 6vmin 4vmin 4vmin 4vmin;
+}
+
+/* Flexbox for contact information */
+.contact-flexbox { 
+  display: flex;
+  gap: var(--gap-sm); 
+   
+}
+
+/* Contact information boxes */
+.contact-box { 
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content:baseline;
+  gap: 2vmin;
+  font-family: 'Kanit', sans-serif;  
+  font-style: normal;
+  font-weight: 300;
+  font-size: clamp(0.5rem, 1.5rem, 3rem);
+  border-radius: 6px;  
+  transition: background-color 100ms, color 100ms;
+}
+
+/* Changes margin for mobile devices */
+@media only screen and (max-width: 800px) {
+  .contact-box {
+    flex-direction: column;
+    font-size: clamp(0.25rem, 1rem, 2rem);
+    
+
+  }
+}
+
+/* Contact information box label */
+.contact-header {   
+  font-weight: bolder;
+}
+
+/* Contact information box content */
+.contact-content { 
+  
+  font-style: italic;
+  background-color: var(--bg-dark);
+  padding: 2vmin;
+  border-radius: 10px;
+}
+
+/* Content on hover */
+.contact-content:hover {
+  background-color: white;
+  color: black;
+  
+}
+
+/* --- Contact box close --- */
+/* ------------------------- */
+/* --- Footer open --------- */
+
+
+footer {
+  max-height: min-content;
+  max-width: 100%;
+  
+
+}
+
+.site-footer { 
+  display: flex;
+  padding: .35vmax 2vmin .55vmax 2vmin;
+  background-color: var(--bg-dark);
+  font-family: 'RedditMono', 'Kanit', sans-serif;
+  font-size: clamp(0.3rem, .85rem, 2rem);
+  text-wrap: pretty;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 165px;
+}
+
+/* Changes margins for mobile devices */
+@media only screen and (max-width: 800px) {
+  .site-footer {
+    font-size: clamp(0.3rem, .75rem, 2rem);
+    flex-direction: column;
+    align-items: center;
+    gap: 1vmin;
+    padding: .5vmin 1vmin;
+  }
+}
+
+
+.site-footer-creds1 {
+  color: gray;
+  text-align: right;
+  
+}
+
+@media only screen and (max-width: 800px) {
+  .site-footer-creds1 {
+    text-align: center;
+  }
+}
+
+.site-footer-copyright { 
+
+}
+
+.site-footer-creds2 {
+  color: gray;
+} 

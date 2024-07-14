@@ -237,7 +237,76 @@ a:active {
 
 /* --- Contact box close --- */
 /* ------------------------- */
-/* --- Contact box open ---- */
+/* --- FAQ Block Open -------- */
+
+.faq-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.faq-wrapper > h3 {
+  font-size: clamp(0.1rem, 2.5rem, 3rem);
+  width: max-content;
+  padding: .25em 1em;
+  border: solid .1em var(--bg-light);
+  border-radius: 25px;
+
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.faq {
+  max-width: 70vw;
+  font-size: clamp(0.5rem, 1rem, 3rem);
+  text-wrap: pretty;
+  background: linear-gradient(0deg, var(--bg-medium), transparent);
+  border-radius: 50px;
+  margin: 0 5vmin;
+  padding: 1.5em 2.5em;
+  
+}
+
+.faq > h4 {
+  background-color: var(--bg-light);
+  border-radius: 1em;
+  max-width: fit-content;
+  padding: 1em;
+  font-weight: 400;
+  font-size: clamp(0.5rem, 1.5rem, 2rem);
+  text-wrap: pretty;
+  line-height: 1em;
+  margin: .5em 0 1.75em 0;
+}
+
+.faq > p {
+  
+  font-weight: 300;
+  line-height: 1em;
+  margin: 0 0 1em 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .faq-container {
+    max-width: 99vw;
+    margin: 0;
+  }
+
+  .faq {
+    margin: 0 2vmin;
+    padding: 1em 2em;
+    text-wrap: balance;
+  }
+}
+
+/* --- FAQ close ------------- */
+/* --------------------------- */
+/* --- Contact open ---------- */
 
 /* HTML wrapper */
 .contact-wrapper { 
@@ -245,20 +314,12 @@ a:active {
   justify-content: center;
   max-width: 100%;
   padding: 1vmin;
-  margin: var(--mg-pg);
-}
-
-/* Changes margin for mobile devices */
-@media only screen and (max-width: 800px) {
-  .contact-wrapper {
-    margin: var(--mg-pg-)
-  }
+  margin: 0 0 5rem 0;
 }
 
 /* Banner and background */
 .contact-banner { 
   max-width: 90vw;
-  margin: 5vmin;
   background: linear-gradient(0deg, var(--bg-darker) 40%, transparent 100%);
   background-blend-mode: multiply;
   border-radius: 20px;
@@ -287,16 +348,6 @@ a:active {
   transition: background-color 100ms, color 100ms;
 }
 
-/* Changes margin for mobile devices */
-@media only screen and (max-width: 800px) {
-  .contact-box {
-    flex-direction: column;
-    font-size: clamp(0.25rem, 1rem, 2rem);
-    
-
-  }
-}
-
 /* Contact information box label */
 .contact-header {   
   font-weight: bolder;
@@ -304,7 +355,6 @@ a:active {
 
 /* Contact information box content */
 .contact-content { 
-  
   font-style: italic;
   background-color: var(--bg-dark);
   padding: 2vmin;
@@ -318,16 +368,27 @@ a:active {
   
 }
 
-/* --- Contact box close --- */
-/* ------------------------- */
-/* --- Footer open --------- */
+/* Changes margin for mobile devices */
+@media only screen and (max-width: 800px) {
+  .contact-box {
+    flex-direction: column;
+    font-size: clamp(0.25rem, 1rem, 2rem);
+  }
 
+  .contact-wrapper {
+    margin: 0;
+    padding: 0;
+    }
+}
+
+/* --- Contact close --------- */
+/* --------------------------- */
+/* --- Footer open ----------- */
 
 footer {
   max-height: min-content;
   max-width: 100%;
-  
-
+  margin: 0;
 }
 
 .site-footer { 
@@ -339,31 +400,12 @@ footer {
   text-wrap: pretty;
   justify-content: center;
   gap: 1em;
-  margin-top: 165px;
 }
-
-/* Changes margins for mobile devices */
-@media only screen and (max-width: 800px) {
-  .site-footer {
-    font-size: clamp(0.3rem, .75rem, 2rem);
-    flex-direction: column;
-    align-items: center;
-    gap: 1vmin;
-    padding: .5vmin 1vmin;
-  }
-}
-
 
 .site-footer-creds1 {
   color: gray;
   text-align: right;
   
-}
-
-@media only screen and (max-width: 800px) {
-  .site-footer-creds1 {
-    text-align: center;
-  }
 }
 
 .site-footer-copyright { 
@@ -373,3 +415,22 @@ footer {
 .site-footer-creds2 {
   color: gray;
 } 
+
+/* Changes margins for mobile devices */
+@media only screen and (max-width: 800px) {
+  footer{ 
+    margin: 0;
+    padding: 0;
+  }
+  .site-footer {
+    font-size: clamp(0.3rem, .75rem, 2rem);
+    flex-direction: column;
+    align-items: center;
+    gap: 1vmin;
+    padding: .5vmin 1vmin;
+  }
+
+  .site-footer-creds1 {
+    text-align: center;
+  }
+}

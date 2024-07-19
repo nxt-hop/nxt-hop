@@ -52,6 +52,22 @@
 
 @font-face {
 	font-family: 'Kanit';
+	src: local('Kanit-ExtraLightItalic'), 
+      url('/assets/fonts/Kanit/Kanit-ExtraLightItalic.woff2') format('woff2');
+      font-weight: 200;
+      font-style: italic;
+  }
+
+@font-face {
+	font-family: 'Kanit';
+	src: local('Kanit-ExtraLight'),
+	url('/assets/fonts/Kanit/Kanit-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+  }  
+
+@font-face {
+	font-family: 'Kanit';
 	src: local('Kanit-LightItalic'), 
       url('/assets/fonts/Kanit/Kanit-LightItalic.woff2') format('woff2');
       font-weight: 300;
@@ -213,9 +229,50 @@ a:active {
   margin: 0 auto; /* Center align the image inside its container */
 }
 
-/* --- Logo close --- */
-/* ------------------ */
-/* --- H1 ----------- */
+/* --- Logo close -------- */
+/* ----------------------- */
+/* --- Nav bar open ------ */
+
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2vmin 2vmin;
+}
+
+.nav-bar {
+  display: flex;
+  height: min-content;  
+  max-width: 90vmin;
+  background-color: var(--bg-darker);
+  /* border: 0.33vh outset hsl(0, 0%, 20%); */
+  border-radius: .85rem;
+}
+
+/* Menu bar: links - set color */
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  font: italic 300 var(--fs-3) 'Kanit', sans-serif;
+  padding: 1rem 2rem;
+  transition: color 100ms;
+}
+
+/* Changes padding for mobile devices */
+@media only screen and (max-width: 800px) {
+  .nav-bar a {
+    padding: 1rem ;
+    font-size: var(--fs-);
+  }
+}
+
+/* Menu bar: links - set hover behavior */
+.nav-bar a:hover {
+  color: var(--hc-1); 
+}
+
+/* --- Nav bar close ----- */
+/* ----------------------- */
+/* --- H1 open ----------- */
 
 .h1-container {
   width: 100%;
@@ -230,8 +287,13 @@ a:active {
 /* Changes padding for mobile devices */
 @media only screen and (max-width: 600px) {
   .logo-container {
-    margin: 5vh 10vw 5vh 10vw;
+    margin: 5vh 10vw 5vh 10vw;  
   }
+  
+  .h1-content {
+    font-size: clamp(.5rem, 1.2rem, 2rem);
+  }
+
 
 }
 
@@ -263,7 +325,7 @@ a:active {
 
 .faq {
   max-width: 70vw;
-  font-size: clamp(0.5rem, 1rem, 3rem);
+  font-size: clamp(0.5rem, 1.25rem, 3rem);
   text-wrap: pretty;
   background: linear-gradient(0deg, var(--bg-medium), transparent);
   border-radius: 50px;
@@ -282,12 +344,13 @@ a:active {
   text-wrap: pretty;
   line-height: 1em;
   margin: .5em 0 1.75em 0;
+  text-align: center;
 }
 
 .faq > p {
   
-  font-weight: 300;
-  line-height: 1em;
+  font-weight: 200;
+  line-height: 1.25em;
   margin: 0 0 1em 0;
 }
 
@@ -301,6 +364,10 @@ a:active {
     margin: 0 2vmin;
     padding: 1em 2em;
     text-wrap: balance;
+  }
+
+  .faq-wrapper > h3 {
+    font-size: clamp(0.5rem, 2rem, 3rem);
   }
 }
 
